@@ -426,13 +426,6 @@
         position: fixed;
         inset: 0;
         z-index: 1000;
-        display: grid;
-        place-items: center;
-        padding: clamp(16px, 3vw, 32px);
-        background:
-          var(--page-overlay),
-          url("../assets/background.png") center/cover fixed no-repeat,
-          var(--bg);
         transition:
           opacity 1s ease,
           visibility 1s ease;
@@ -717,6 +710,7 @@
         filter: blur(1px);
       }
 
+      /* Montagnes lointaines */
       .mountains {
         background:
           radial-gradient(
@@ -781,6 +775,7 @@
         );
       }
 
+      /* Collines intermédiaires */
       .hills {
         background:
           radial-gradient(
@@ -851,6 +846,7 @@
         );
       }
 
+      /* Champs au premier plan */
       .fields {
         background:
           radial-gradient(
