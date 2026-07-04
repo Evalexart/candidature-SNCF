@@ -1,0 +1,1317 @@
+<!doctype html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Page de motivation – Anaïs Mattle – DYB</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .theme-light {
+        --bg: #f7f8fb;
+        --page-overlay: linear-gradient(
+          180deg,
+          rgba(247, 248, 251, 0.42),
+          rgba(247, 248, 251, 0.52)
+        );
+        --surface: #ffffff;
+        --texte: #2c2c2c;
+        --gris: #666666;
+        --bordeaux: #7b2d5a;
+        --border: #e8d0dc;
+        --hover: #f7eff4;
+      }
+      .theme-dark {
+        --bg: #0c1220;
+        --page-overlay: linear-gradient(
+          180deg,
+          rgba(10, 16, 28, 0.74),
+          rgba(10, 16, 28, 0.8)
+        );
+        --surface: #251820;
+        --texte: #ede0e8;
+        --gris: #a890a0;
+        --bordeaux: #c46fa0;
+        --border: #3d2535;
+        --hover: #2a1a22;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background:
+          var(--page-overlay),
+          url("../assets/background.png") center/cover fixed no-repeat,
+          var(--bg);
+        color: var(--texte);
+        min-height: 100vh;
+        padding-bottom: 56px;
+      }
+
+      /* ── BANDEAU ── */
+      .bandeau {
+        background: color-mix(in srgb, var(--surface) 32%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 9px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .bandeau-text {
+        font-size: 0.78rem;
+        color: var(--texte);
+        line-height: 1.4;
+      }
+      .bandeau-btn {
+        background-color: var(--bordeaux);
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 14px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .bandeau-btn:hover {
+        opacity: 0.88;
+      }
+
+      /* ── HEADER ── */
+      header {
+        background: color-mix(in srgb, var(--surface) 32%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 3px solid var(--bordeaux);
+        padding: 44px 40px 36px;
+      }
+
+      .header-inner {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .header-photo {
+        width: 90px;
+        height: 90px;
+        flex-shrink: 0;
+        align-self: center;
+      }
+      .header-photo img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .header-name h1 {
+        font-size: 2.4rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        line-height: 1.1;
+      }
+      .header-name h1 .prenom {
+        color: var(--bordeaux);
+      }
+      .header-name h1 .nom {
+        color: var(--texte);
+      }
+
+      .header-candidature {
+        text-align: right;
+      }
+      .header-candidature .label {
+        font-size: 0.68rem;
+        letter-spacing: 0.13em;
+        color: var(--bordeaux);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .header-candidature .detail {
+        font-size: 0.88rem;
+        color: var(--gris);
+        line-height: 1.75;
+      }
+
+      /* ── INTRO ── */
+      .intro {
+        max-width: 700px;
+        margin: 40px auto 0;
+        padding: 0 24px;
+      }
+      .intro p {
+        font-size: 0.96rem;
+        line-height: 1.82;
+        color: var(--texte);
+        text-align: justify;
+      }
+
+      /* ── PULL QUOTE ── */
+      .pull {
+        max-width: 580px;
+        margin: 36px auto;
+        padding: 0 24px;
+        text-align: center;
+        font-size: 1.05rem;
+        font-style: italic;
+        font-weight: 600;
+        color: var(--bordeaux);
+        line-height: 1.65;
+      }
+      .pull::before,
+      .pull::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: var(--border);
+        margin: 14px auto;
+        width: 50%;
+      }
+
+      /* ── ACCORDÉONS ── */
+      .accordion-section {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .accordion-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        color: var(--bordeaux);
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 36px 0 10px;
+      }
+
+      details {
+        background: color-mix(in srgb, var(--surface) 32%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-left: 3px solid var(--border);
+        margin-bottom: 6px;
+        overflow: hidden;
+      }
+      details[open] {
+        border-left-color: var(--bordeaux);
+      }
+
+      summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.93rem;
+        color: var(--texte);
+
+        background: transparent;
+
+        list-style: none;
+        user-select: none;
+        gap: 12px;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::after {
+        content: "+";
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: var(--bordeaux);
+        flex-shrink: 0;
+        transition: transform 0.25s;
+      }
+      details[open] summary::after {
+        transform: rotate(45deg);
+      }
+      summary:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .detail-body {
+        padding: 4px 18px 18px;
+        font-size: 0.91rem;
+        line-height: 1.8;
+        color: var(--texte);
+        background: transparent;
+        text-align: justify;
+      }
+      .detail-body p + p {
+        margin-top: 10px;
+      }
+
+      /* ── CARTE CONTACT ── */
+      .contact-card {
+        max-width: 700px;
+        margin: 48px auto 0;
+        padding: 0 24px;
+      }
+      .contact-card-inner {
+        background: color-mix(in srgb, var(--surface) 32%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-top: 2px solid var(--bordeaux);
+        padding: 22px 24px;
+      }
+      .contact-sign {
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        color: var(--texte);
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 24px;
+        margin-bottom: 16px;
+      }
+      .contact-item {
+        font-size: 0.84rem;
+        color: var(--gris);
+        line-height: 1.6;
+        display: grid;
+        grid-template-columns: 1.8rem 1fr;
+        align-items: center;
+        column-gap: 0.35rem;
+      }
+
+      .contact-icon {
+        width: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        font-size: 1rem;
+      }
+      .contact-item a {
+        color: var(--bordeaux);
+        text-decoration: none;
+      }
+      .contact-github {
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+        font-size: 0.82rem;
+        color: var(--gris);
+      }
+      .contact-github a {
+        color: var(--bordeaux);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .contact-github a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 560px) {
+        header {
+          padding: 28px 20px 24px;
+        }
+        .header-inner {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+        }
+        .header-name h1 {
+          font-size: 1.6rem;
+        }
+        .header-candidature {
+          text-align: center;
+        }
+        .intro,
+        .accordion-section,
+        .contact-card {
+          padding: 0 16px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .bandeau {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body class="theme-dark">
+    <!-- ═══════════════════════════════════════════════════════
+     ANIMATION TRAIN D'ENTRÉE
+     ═══════════════════════════════════════════════════════ -->
+    <div class="train-intro" id="trainIntro">
+      <section
+        class="train-cabin"
+        id="trainCabin"
+        role="button"
+        tabindex="0"
+        aria-label="Cliquer pour accéder à la candidature"
+      >
+        <div class="cabin-topbar">
+          <div>
+            <p class="eyebrow">SNCF Voyageurs — alternance BTS SIO SLAM</p>
+            <h1>Page de motivation</h1>
+          </div>
+          <p class="click-label">Cliquez pour baisser le store</p>
+        </div>
+
+        <div class="window-shell">
+          <div class="window-frame">
+            <div class="window-glass">
+              <div class="outside-world">
+                <div class="sky-layer"></div>
+                <div class="sun"></div>
+
+                <div class="clouds-wrap layer-slow">
+                  <div class="clouds"></div>
+                  <div class="clouds mirror"></div>
+                  <div class="clouds"></div>
+                  <div class="clouds mirror"></div>
+                </div>
+
+                <div class="mountains-wrap layer-slow">
+                  <div class="mountains"></div>
+                  <div class="mountains mirror"></div>
+                  <div class="mountains"></div>
+                  <div class="mountains mirror"></div>
+                </div>
+
+                <div class="hills-wrap layer-medium">
+                  <div class="hills"></div>
+                  <div class="hills mirror"></div>
+                  <div class="hills"></div>
+                  <div class="hills mirror"></div>
+                </div>
+
+                <div class="fields-wrap layer-fast">
+                  <div class="fields"></div>
+                  <div class="fields"></div>
+                </div>
+
+                <div class="track-wrap layer-fast">
+                  <div class="track-line"></div>
+                  <div class="track-line"></div>
+                </div>
+              </div>
+
+              <div class="glass-reflection"></div>
+              <div class="store"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <style>
+      .train-intro {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        padding: clamp(16px, 3vw, 32px);
+        background:
+          var(--page-overlay),
+          url("../assets/background.png") center/cover fixed no-repeat,
+          var(--bg);
+        transition:
+          opacity 1s ease,
+          visibility 1s ease;
+      }
+
+      .train-intro.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .train-cabin {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        cursor: pointer;
+        background:
+          radial-gradient(
+            circle at 52% 42%,
+            rgba(196, 111, 160, 0.12),
+            transparent 30%
+          ),
+          linear-gradient(180deg, #070b13 0%, #0c1220 34%, #120d15 100%);
+      }
+
+      .train-cabin::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.5),
+            transparent 12%,
+            transparent 88%,
+            rgba(0, 0, 0, 0.5)
+          ),
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.32),
+            transparent 12%,
+            transparent 85%,
+            rgba(0, 0, 0, 0.5)
+          );
+        pointer-events: none;
+        z-index: 20;
+      }
+
+      .cabin-topbar {
+        position: absolute;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        padding: clamp(18px, 3.5vh, 32px) clamp(20px, 5vw, 64px);
+        background: linear-gradient(
+          180deg,
+          rgba(7, 11, 19, 0.92) 0%,
+          rgba(7, 11, 19, 0.7) 70%,
+          transparent 100%
+        );
+      }
+
+      .eyebrow,
+      .click-label {
+        color: #f0c3da;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: clamp(0.66rem, 1.4vw, 0.82rem);
+        font-weight: 700;
+      }
+
+      .cabin-topbar h1 {
+        margin-top: 8px;
+        color: #fdf7f9;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: clamp(1.3rem, 3.4vw, 2.2rem);
+        line-height: 1.1;
+      }
+
+      .click-label {
+        padding-top: 4px;
+        color: #e7d9e0;
+        text-align: right;
+      }
+
+      .window-shell {
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        top: 58%;
+        width: min(1200px, 88vw);
+        height: min(560px, 58vh);
+        transform: translate(-50%, -50%);
+        border-radius: 26px;
+        padding: 10px;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(237, 224, 232, 0.16),
+            rgba(0, 0, 0, 0.32)
+          ),
+          #130f16;
+        box-shadow:
+          0 0 0 1px rgba(196, 111, 160, 0.16),
+          0 30px 90px rgba(0, 0, 0, 0.66),
+          inset 0 0 20px rgba(0, 0, 0, 0.7);
+      }
+
+      .window-frame {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 18px;
+        padding: 6px;
+        background:
+          linear-gradient(180deg, #2a2028, #090c12 48%, #1e151d), var(--border);
+        box-shadow:
+          inset 0 0 0 1px rgba(237, 224, 232, 0.14),
+          inset 0 0 20px rgba(0, 0, 0, 0.85);
+      }
+
+      .window-glass {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 14px;
+        background: #111827;
+        box-shadow:
+          inset 0 0 0 1px rgba(196, 111, 160, 0.22),
+          inset 0 0 60px rgba(0, 0, 0, 0.4);
+      }
+
+      /* ───────────────── PAYSAGE ───────────────── */
+
+      .outside-world {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: linear-gradient(
+          180deg,
+          #2b2560 0%,
+          #6a3e79 22%,
+          #c15a80 42%,
+          #e8886f 58%,
+          #f4b177 68%,
+          #3a2338 100%
+        );
+      }
+
+      .sky-layer {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, 0.16),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 70% 12%,
+            rgba(255, 214, 235, 0.14),
+            transparent 26%
+          );
+        opacity: 0.9;
+      }
+
+      .sun {
+        position: absolute;
+        left: 50%;
+        top: 38%;
+        width: 14%;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          #fff6e0 0%,
+          #ffd479 38%,
+          #ff9d6c 68%,
+          transparent 78%
+        );
+        box-shadow: 0 0 60px 18px rgba(255, 180, 120, 0.45);
+        opacity: 0.95;
+      }
+
+      .clouds-wrap,
+      .mountains-wrap,
+      .hills-wrap {
+        position: absolute;
+        left: 0;
+        width: 400%;
+        display: flex;
+      }
+
+      .fields-wrap,
+      .track-wrap {
+        position: absolute;
+        left: 0;
+        width: 200%;
+        display: flex;
+      }
+
+      .clouds-wrap {
+        top: 10%;
+        height: 22%;
+      }
+      .mountains-wrap {
+        bottom: 0;
+        height: 54%;
+      }
+      .hills-wrap {
+        bottom: 0;
+        height: 36%;
+      }
+      .fields-wrap {
+        bottom: 0;
+        height: 14%;
+      }
+      .track-wrap {
+        bottom: 2%;
+        height: 3px;
+      }
+
+      .clouds-wrap > *,
+      .mountains-wrap > *,
+      .hills-wrap > * {
+        flex: 0 0 25%;
+        width: 25%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .fields-wrap > *,
+      .track-wrap > * {
+        flex: 0 0 50%;
+        width: 50%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .mirror {
+        transform: scaleX(-1);
+      }
+
+      .clouds {
+        opacity: 0.55;
+        background:
+          radial-gradient(
+            ellipse at 8% 50%,
+            rgba(255, 236, 224, 0.5) 0 9%,
+            transparent 15%
+          ),
+          radial-gradient(
+            ellipse at 24% 40%,
+            rgba(255, 236, 224, 0.4) 0 10%,
+            transparent 16%
+          ),
+          radial-gradient(
+            ellipse at 42% 55%,
+            rgba(255, 236, 224, 0.36) 0 8%,
+            transparent 14%
+          ),
+          radial-gradient(
+            ellipse at 63% 42%,
+            rgba(255, 236, 224, 0.42) 0 10%,
+            transparent 16%
+          ),
+          radial-gradient(
+            ellipse at 84% 52%,
+            rgba(255, 236, 224, 0.36) 0 9%,
+            transparent 15%
+          );
+        filter: blur(1px);
+      }
+
+      .mountains {
+        background:
+          radial-gradient(
+            circle at 8% 30%,
+            rgba(0, 0, 0, 0.22) 0 5%,
+            transparent 9%
+          ),
+          radial-gradient(
+            circle at 19% 55%,
+            rgba(255, 255, 255, 0.06) 0 4%,
+            transparent 8%
+          ),
+          radial-gradient(
+            circle at 31% 20%,
+            rgba(0, 0, 0, 0.2) 0 6%,
+            transparent 10%
+          ),
+          radial-gradient(
+            circle at 44% 48%,
+            rgba(255, 255, 255, 0.05) 0 4%,
+            transparent 8%
+          ),
+          radial-gradient(
+            circle at 58% 26%,
+            rgba(0, 0, 0, 0.22) 0 5%,
+            transparent 9%
+          ),
+          radial-gradient(
+            circle at 71% 52%,
+            rgba(255, 255, 255, 0.06) 0 4%,
+            transparent 8%
+          ),
+          radial-gradient(
+            circle at 84% 22%,
+            rgba(0, 0, 0, 0.2) 0 6%,
+            transparent 10%
+          ),
+          radial-gradient(
+            circle at 94% 50%,
+            rgba(255, 255, 255, 0.05) 0 4%,
+            transparent 8%
+          ),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 35%),
+          linear-gradient(165deg, #5c3a67, #3a2540 65%, #2c1c33);
+        clip-path: polygon(
+          0 100%,
+          0 52%,
+          8% 33%,
+          16% 47%,
+          22% 21%,
+          30% 40%,
+          38% 12%,
+          46% 36%,
+          54% 8%,
+          60% 30%,
+          68% 44%,
+          76% 18%,
+          84% 39%,
+          92% 6%,
+          100% 27%,
+          100% 100%
+        );
+      }
+
+      .hills {
+        background:
+          radial-gradient(
+            circle at 6% 60%,
+            rgba(255, 255, 255, 0.08) 0 3%,
+            transparent 6%
+          ),
+          radial-gradient(
+            circle at 15% 30%,
+            rgba(0, 0, 0, 0.18) 0 4%,
+            transparent 7%
+          ),
+          radial-gradient(
+            circle at 26% 65%,
+            rgba(255, 255, 255, 0.07) 0 3%,
+            transparent 6%
+          ),
+          radial-gradient(
+            circle at 37% 25%,
+            rgba(0, 0, 0, 0.16) 0 4%,
+            transparent 7%
+          ),
+          radial-gradient(
+            circle at 48% 58%,
+            rgba(255, 255, 255, 0.08) 0 3%,
+            transparent 6%
+          ),
+          radial-gradient(
+            circle at 60% 22%,
+            rgba(0, 0, 0, 0.18) 0 4%,
+            transparent 7%
+          ),
+          radial-gradient(
+            circle at 71% 55%,
+            rgba(255, 255, 255, 0.07) 0 3%,
+            transparent 6%
+          ),
+          radial-gradient(
+            circle at 83% 28%,
+            rgba(0, 0, 0, 0.16) 0 4%,
+            transparent 7%
+          ),
+          radial-gradient(
+            circle at 93% 60%,
+            rgba(255, 255, 255, 0.08) 0 3%,
+            transparent 6%
+          ),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 40%),
+          linear-gradient(170deg, #7a3f52, #4a2536 70%, #3a1c2c);
+        clip-path: polygon(
+          0 100%,
+          0 44%,
+          8% 27%,
+          14% 39%,
+          20% 16%,
+          26% 34%,
+          34% 9%,
+          42% 30%,
+          50% 21%,
+          56% 42%,
+          64% 12%,
+          72% 33%,
+          80% 7%,
+          88% 26%,
+          96% 38%,
+          100% 18%,
+          100% 100%
+        );
+      }
+
+      .fields {
+        background:
+          radial-gradient(
+            circle at 6% 40%,
+            rgba(255, 214, 150, 0.4) 0 3px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 14% 70%,
+            rgba(255, 180, 190, 0.35) 0 3px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 23% 30%,
+            rgba(255, 214, 150, 0.3) 0 2px,
+            transparent 3px
+          ),
+          radial-gradient(
+            circle at 33% 60%,
+            rgba(255, 180, 190, 0.3) 0 3px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 45% 45%,
+            rgba(255, 214, 150, 0.35) 0 3px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 57% 25%,
+            rgba(255, 180, 190, 0.3) 0 2px,
+            transparent 3px
+          ),
+          radial-gradient(
+            circle at 68% 65%,
+            rgba(255, 214, 150, 0.35) 0 3px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 79% 35%,
+            rgba(255, 180, 190, 0.3) 0 3px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 90% 55%,
+            rgba(255, 214, 150, 0.3) 0 2px,
+            transparent 3px
+          ),
+          linear-gradient(180deg, #3d5a3a, #22321f);
+      }
+
+      .track-line {
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #dcd0c8,
+          transparent,
+          #dcd0c8,
+          transparent
+        );
+        opacity: 0.5;
+      }
+
+      .layer-slow {
+        animation: loopScroll 26s linear infinite;
+      }
+      .layer-medium {
+        animation: loopScroll 13s linear infinite;
+      }
+      .layer-fast {
+        animation: loopScroll 6s linear infinite;
+      }
+
+      .glass-reflection {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        background:
+          linear-gradient(
+            110deg,
+            transparent 0 22%,
+            rgba(255, 240, 235, 0.16) 27%,
+            transparent 34%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.08),
+            transparent 38%,
+            rgba(0, 0, 0, 0.14)
+          );
+        mix-blend-mode: screen;
+        opacity: 0.42;
+        pointer-events: none;
+      }
+
+      .store {
+        position: absolute;
+        z-index: 15;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 115%;
+        transform: translateY(-105%);
+        background:
+          repeating-linear-gradient(
+            180deg,
+            rgba(196, 111, 160, 0.16) 0 2px,
+            transparent 2px 18px
+          ),
+          linear-gradient(180deg, #120d15, #251820 58%, #0c1220);
+        border-bottom: 2px solid var(--bordeaux);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.58);
+        pointer-events: none;
+      }
+
+      .train-cabin.is-arriving .store {
+        animation: storeDown 1.05s ease forwards;
+      }
+
+      @keyframes loopScroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes storeDown {
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .cabin-topbar {
+          display: block;
+          text-align: center;
+          padding: 16px 18px;
+        }
+        .click-label {
+          margin-top: 10px;
+          text-align: center;
+        }
+        .window-shell {
+          width: 94vw;
+          height: 50vh;
+          top: 64%;
+          border-radius: 20px;
+          padding: 8px;
+        }
+        .window-frame {
+          border-radius: 14px;
+          padding: 5px;
+        }
+        .window-glass {
+          border-radius: 10px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .layer-slow,
+        .layer-medium,
+        .layer-fast {
+          animation: none;
+        }
+        .train-intro {
+          transition: none;
+        }
+      }
+    </style>
+
+    <script>
+      const trainIntro = document.getElementById("trainIntro");
+      const trainCabin = document.getElementById("trainCabin");
+
+      function launchArrival() {
+        if (trainCabin.classList.contains("is-arriving")) return;
+        trainCabin.classList.add("is-arriving");
+        window.setTimeout(() => {
+          trainIntro.classList.add("is-hidden");
+        }, 1450);
+      }
+
+      trainCabin.addEventListener("click", launchArrival);
+      trainCabin.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          launchArrival();
+        }
+      });
+    </script>
+    <!-- ═══════════════════════════════════════════════════════
+     FIN DU BLOC ANIMATION TRAIN 
+     ═══════════════════════════════════════════════════════ -->
+    <!-- ── BANDEAU ── -->
+    <div class="bandeau">
+      <span class="bandeau-text"
+        >Certains navigateurs forcent leurs propres couleurs et peuvent ignorer
+        celles de la page. Si le rendu vous semble incorrect, n'hésitez pas à
+        basculer entre les deux thèmes.</span
+      >
+      <button class="bandeau-btn" id="themeBtn">🌙 Thème sombre</button>
+    </div>
+    <!-- ── HEADER ── -->
+    <header>
+      <div class="header-inner">
+        <div class="header-name">
+          <h1>
+            <span class="prenom">ANAÏS</span><br /><span class="nom"
+              >MATTLE</span
+            >
+          </h1>
+        </div>
+        <div class="header-photo">
+          <img alt="Anaïs Mattle" src="../assets/photo.png" />
+        </div>
+        <div class="header-candidature">
+          <div class="label">Page de motivation</div>
+          <div class="detail">
+            Candidature Alternance BTS SIO SLAM<br />
+            Développeuse Informatique Embarquée<br />
+            SNCF Voyageur – Hellemmes-Lille
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ── INTRO ── -->
+    <div class="intro">
+      <p>
+        Mon parcours vers le numérique s'est construit à partir de besoins
+        concrets. Lorsqu'une idée mérite d'être réalisée, qu'un usage peut être
+        amélioré ou qu'un problème nécessite d'être résolu, j'ai naturellement
+        tendance à apprendre les outils nécessaires pour construire moi-même la
+        solution. Au fil de mes projets, cette démarche m'a amenée à analyser
+        des besoins, concevoir des outils, les tester puis les faire évoluer au
+        fil des usages.
+      </p>
+    </div>
+    <div class="pull">
+      « Ce qui m'intéresse le plus, c'est comprendre un besoin, concevoir une
+      solution fiable et m'assurer qu'elle fonctionne réellement. »
+    </div>
+    <!-- ── ACCORDÉONS ── -->
+    <div class="accordion-section">
+      <p class="accordion-label">Parcours &amp; expériences</p>
+      <details>
+        <summary>Pourquoi le numérique — et pourquoi maintenant ?</summary>
+        <div class="detail-body">
+          <p>
+            Je ne suis pas arrivée dans l'informatique par un parcours scolaire
+            classique. J'y suis arrivée en cherchant à construire des outils
+            utiles : bots Discord en Python et SQL, automatisations Google
+            Sheets avec Apps Script, hébergement de services sous Linux, puis
+            développement web avec Astro, HTML, CSS et JavaScript.
+          </p>
+          <p>
+            Chaque nouveau projet m'a conduite à apprendre les compétences dont
+            j'avais besoin pour répondre à une problématique concrète. Cette
+            façon d'apprendre par la pratique est progressivement devenue ma
+            manière naturelle d'aborder le numérique.
+          </p>
+          <p>
+            Aujourd'hui, je souhaite consolider cette expérience au travers d'un
+            BTS SIO en alternance afin d'évoluer dans un cadre professionnel,
+            d'apprendre auprès d'équipes expérimentées et de développer des
+            méthodes de travail plus structurées.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>Ce que j'ai déjà mis en pratique</summary>
+        <div class="detail-body">
+          <p>
+            Au sein de différentes communautés en ligne, j'ai conçu plusieurs
+            outils destinés à automatiser certaines tâches, améliorer
+            l'organisation ou simplifier l'accès à l'information.
+          </p>
+          <p>
+            Les demandes prenaient la forme de demandes d'évolution, de
+            signalements de dysfonctionnements ou de retours utilisateurs. Je
+            devais analyser ces remontées, reproduire les anomalies lorsqu'elles
+            étaient confirmées, identifier leur origine, concevoir une solution
+            adaptée puis vérifier son bon fonctionnement avant son déploiement.
+          </p>
+          <p>
+            Cette manière de travailler m'a familiarisée avec un cycle proche de
+            celui utilisé en entreprise : partir d'un besoin, développer une
+            solution, la tester, la corriger si nécessaire puis la faire évoluer
+            à partir des retours obtenus.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>
+          Pourquoi je sépare les environnements de test et de production
+        </summary>
+        <div class="detail-body">
+          <p>
+            Au début de mes projets, je testais directement sur l'environnement
+            utilisé par les utilisateurs. Une erreur survenue en production m'a
+            rapidement montré les limites de cette approche.
+          </p>
+          <p>
+            A partir de cette expérience, j'ai mis en place un environnement de
+            test distinct de la production afin de pouvoir développer,
+            expérimenter et valider les évolutions sans perturber les
+            utilisateurs.
+          </p>
+          <p>
+            Cette organisation m'a appris qu'un environnement de test n'est pas
+            seulement un espace pour vérifier qu'une fonctionnalité fonctionne,
+            mais aussi un moyen de limiter les risques avant un déploiement.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>Derrière un ticket, il y a un besoin</summary>
+        <div class="detail-body">
+          <p>
+            Même si je n'utilisais pas encore d'outil professionnel de gestion
+            de tickets, j'ai rapidement pris l'habitude de traiter les remontées
+            de manière méthodique.
+          </p>
+          <p>
+            Chaque signalement commençait par une phase d'analyse afin de
+            comprendre le problème rencontré. Selon les situations, cela pouvait
+            passer par des échanges avec l'utilisateur, la reproduction du
+            comportement observé ou la vérification du fonctionnement de
+            l'outil.
+          </p>
+          <p>
+            L'objectif était avant tout d'identifier l'origine du problème afin
+            de déterminer s'il s'agissait d'un dysfonctionnement, d'une erreur
+            d'utilisation ou d'un besoin d'évolution, puis d'apporter la réponse
+            la plus adaptée.
+          </p>
+        </div>
+      </details>
+      <p class="accordion-label">Chez SNCF</p>
+      <details>
+        <summary>Ce qui me plaît dans votre offre</summary>
+        <div class="detail-body">
+          <p>
+            Ce qui m'a particulièrement intéressée dans votre offre est qu'elle
+            couvre l'ensemble du cycle de développement d'une application
+            embarquée : prise en compte des tickets, analyse des besoins,
+            conception, développement puis validation des solutions.
+          </p>
+          <p>
+            J'apprécie également le fait que ces développements s'inscrivent
+            dans un environnement où la fiabilité, la rigueur et les phases de
+            test occupent une place essentielle. Pouvoir contribuer à des
+            systèmes utilisés quotidiennement, dont le bon fonctionnement est
+            indispensable, correspond pleinement au type de projets vers
+            lesquels je souhaite évoluer.
+          </p>
+          <p>
+            Cette alternance représente pour moi l'opportunité de consolider une
+            manière de travailler que j'ai jusqu'à présent développée de façon
+            autodidacte, en découvrant les méthodes et les exigences d'une
+            équipe d'ingénierie.
+          </p>
+        </div>
+      </details>
+      <details>
+        <summary>Ce que j'apporte, concrètement</summary>
+        <div class="detail-body">
+          <p>
+            J'apporte une expérience construite principalement au travers de
+            projets personnels et communautaires, dans lesquels j'ai appris à
+            transformer des besoins exprimés par des utilisateurs en solutions
+            concrètes.
+          </p>
+          <p>
+            Au-delà des aspects techniques, ces projets m'ont appris à
+            travailler avec de véritables utilisateurs, à accepter leurs
+            retours, à remettre en question certaines idées et à faire évoluer
+            les outils en fonction des usages observés.
+          </p>
+          <p>
+            Je souhaite aujourd'hui poursuivre cette évolution dans un cadre
+            professionnel, où je pourrai continuer à apprendre tout en
+            contribuant concrètement aux projets qui me seront confiés.
+          </p>
+        </div>
+      </details>
+    </div>
+    <!-- ── CARTE CONTACT ── -->
+    <div class="contact-card">
+      <div class="contact-card-inner">
+        <div class="contact-sign">Anaïs Mattle</div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <a href="mailto:a.mattle@outlook.com">a.mattle@outlook.com</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">☎</span>
+            <span>06 09 56 29 33</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>62500 Saint-Omer</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">🚆</span>
+            <span>Ligne SNCF Lille/Calais</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">🚗</span>
+            <span>Permis B – Véhicule personnel</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">💻</span>
+            <span>Distanciel possible</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">🎓</span>
+            <span>My Digital School - Lille</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">🕔</span>
+            <span>3 jours / 2 jours</span>
+          </div>
+        </div>
+        <div class="contact-github">
+          Code source de cette page :
+          <a
+            href="https://github.com/Evalexart/candidature-SNCF"
+            target="_blank"
+            >github.com/Evalexart/candidature-SNCF</a
+          ><br />
+          Consulter mon CV :
+          <a href="../assets/cv.pdf" target="_blank"
+            >ouvrir dans le navigateur</a
+          ><br />
+          Voir le planning d'alternance :
+          <a href="../assets/planning-mds.pdf" target="_blank"
+            >ouvrir dans le navigateur</a
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      const btn = document.getElementById("themeBtn");
+      const body = document.body;
+      let dark = true;
+
+      btn.textContent = "☀️ Thème clair";
+
+      btn.addEventListener("click", () => {
+        dark = !dark;
+        body.className = dark ? "theme-dark" : "theme-light";
+        btn.textContent = dark ? "☀️ Thème clair" : "🌙 Thème sombre";
+      });
+    </script>
+  </body>
+</html>
