@@ -16,4 +16,4 @@ HTML / CSS / JS vanilla, une seule page, aucune dépendance.
 
 ## Assets attendus (non fournis)
 
-`favicon.png`, `background.png`, `photo.png`, `cv.pdf`, `planning-mds.pdf`, `planning-gb.pdf` — référencés dans le code mais à fournir séparément.
+`favicon.png`, `background.webp`, `photo.webp`, `cv.pdf`, `planning-mds.pdf`, `planning-gb.pdf` — référencés dans le code mais à fournir séparément.
