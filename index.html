@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>Page de motivation – Anaïs Mattle – DYB</title>
+    <title>Page de motivation – Anaïs Mattle – SNCF</title>
     <meta name="robots" content="noindex, nofollow" />
     <style>
       *,
@@ -118,6 +118,9 @@
         height: 90px;
       }
 
+      .header-name {
+        align-self: center;
+      }
       .header-name h1 {
         font-size: 2.4rem;
         font-weight: 800;
@@ -307,6 +310,36 @@
         color: var(--bordeaux);
         text-decoration: none;
       }
+      .school-blocks {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+      .school-block {
+        flex: 1 1 220px;
+        background: color-mix(in srgb, var(--surface) 45%, transparent);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+        font-size: 0.84rem;
+        color: var(--gris);
+        line-height: 1.7;
+      }
+      .school-block .school-name {
+        display: block;
+        font-weight: 700;
+        color: var(--texte);
+        margin-bottom: 4px;
+      }
+      .school-block a {
+        color: var(--bordeaux);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .school-block a:hover {
+        text-decoration: underline;
+      }
       .contact-github {
         padding-top: 12px;
         border-top: 1px solid var(--border);
@@ -345,6 +378,9 @@
         }
         .contact-grid {
           grid-template-columns: 1fr;
+        }
+        .school-blocks {
+          flex-direction: column;
         }
         .bandeau {
           flex-direction: column;
@@ -1066,8 +1102,8 @@
           <div class="label">Page de motivation</div>
           <div class="detail">
             Candidature Alternance BTS SIO SLAM<br />
-            Développeuse Informatique Embarquée<br />
-            SNCF Voyageur – Hellemmes-Lille
+            Adjointe référent technique – Systèmes d'Information Voyageurs<br />
+            Cluster Ingénierie Nord – Hellemmes-Lille
           </div>
         </div>
       </div>
@@ -1126,15 +1162,17 @@
           <p>
             Les demandes prenaient la forme de demandes d'évolution, de
             signalements de dysfonctionnements ou de retours utilisateurs. Je
-            devais analyser ces remontées, reproduire les anomalies lorsqu'elles
-            étaient confirmées, identifier leur origine, concevoir une solution
-            adaptée puis vérifier son bon fonctionnement avant son déploiement.
+            devais analyser ces remontées pour déterminer s'il s'agissait d'un
+            dysfonctionnement, d'une erreur d'utilisation ou d'un réel besoin
+            d'évolution, reproduire l'anomalie lorsqu'elle était confirmée,
+            identifier son origine, concevoir une solution adaptée puis vérifier
+            son bon fonctionnement avant son déploiement.
           </p>
           <p>
-            Cette manière de travailler m'a familiarisée avec un cycle proche de
-            celui utilisé en entreprise : partir d'un besoin, développer une
+            Cette manière de travailler — partir d'un besoin, développer une
             solution, la tester, la corriger si nécessaire puis la faire évoluer
-            à partir des retours obtenus.
+            à partir des retours obtenus — m'a appris à raisonner en termes de
+            cycle complet plutôt que de simple ajout de fonctionnalité.
           </p>
         </div>
       </details>
@@ -1161,52 +1199,30 @@
           </p>
         </div>
       </details>
-      <details>
-        <summary>Derrière un ticket, il y a un besoin</summary>
-        <div class="detail-body">
-          <p>
-            Même si je n'utilisais pas encore d'outil professionnel de gestion
-            de tickets, j'ai rapidement pris l'habitude de traiter les remontées
-            de manière méthodique.
-          </p>
-          <p>
-            Chaque signalement commençait par une phase d'analyse afin de
-            comprendre le problème rencontré. Selon les situations, cela pouvait
-            passer par des échanges avec l'utilisateur, la reproduction du
-            comportement observé ou la vérification du fonctionnement de
-            l'outil.
-          </p>
-          <p>
-            L'objectif était avant tout d'identifier l'origine du problème afin
-            de déterminer s'il s'agissait d'un dysfonctionnement, d'une erreur
-            d'utilisation ou d'un besoin d'évolution, puis d'apporter la réponse
-            la plus adaptée.
-          </p>
-        </div>
-      </details>
       <p class="accordion-label">Chez SNCF</p>
       <details>
         <summary>Ce qui me plaît dans votre offre</summary>
         <div class="detail-body">
           <p>
-            Ce qui m'a particulièrement intéressée dans votre offre est qu'elle
-            couvre l'ensemble du cycle de développement d'une application
-            embarquée : prise en compte des tickets, analyse des besoins,
-            conception, développement puis validation des solutions.
+            Ce qui m'a donné envie de candidater sur cette offre plutôt que sur
+            une offre de développement plus généraliste, c'est la place centrale
+            donnée au test et à la qualité. J'attache beaucoup d'importance à ce
+            qu'un outil fasse exactement ce qu'on attend de lui, ni plus ni
+            moins, et à ce que son fonctionnement reste toujours clair pour la
+            personne qui l'utilise. Même dans des choses du quotidien, j'ai
+            tendance à rechercher la précision et l'optimisation avant la
+            nouveauté — je préfère qu'une solution fonctionne exactement comme
+            prévu plutôt que d'en ajouter une de plus qui fonctionne à peu près.
+            C'est cette même exigence que je retrouve dans la description de
+            votre offre, à travers l'importance donnée à la validation et au
+            suivi qualité.
           </p>
           <p>
-            J'apprécie également le fait que ces développements s'inscrivent
-            dans un environnement où la fiabilité, la rigueur et les phases de
-            test occupent une place essentielle. Pouvoir contribuer à des
-            systèmes utilisés quotidiennement, dont le bon fonctionnement est
-            indispensable, correspond pleinement au type de projets vers
-            lesquels je souhaite évoluer.
-          </p>
-          <p>
-            Cette alternance représente pour moi l'opportunité de consolider une
-            manière de travailler que j'ai jusqu'à présent développée de façon
-            autodidacte, en découvrant les méthodes et les exigences d'une
-            équipe d'ingénierie.
+            C'est justement ce cadre plus formalisé — gestion des exigences
+            système, processus qualité documenté à l'échelle d'une entreprise —
+            que cette alternance me donnerait l'occasion de découvrir et de
+            structurer, en m'appuyant sur une exigence de rigueur que j'applique
+            déjà à mon échelle.
           </p>
         </div>
       </details>
@@ -1215,15 +1231,18 @@
         <div class="detail-body">
           <p>
             J'apporte une expérience construite principalement au travers de
-            projets personnels et communautaires, dans lesquels j'ai appris à
-            transformer des besoins exprimés par des utilisateurs en solutions
-            concrètes.
+            projets personnels et communautaires, dans lesquels j'ai développé
+            des scripts d'automatisation en Python, mis en place des outils de
+            suivi et de vérification, et pris l'habitude de documenter et tester
+            chaque évolution avant sa mise en production.
           </p>
           <p>
-            Au-delà des aspects techniques, ces projets m'ont appris à
-            travailler avec de véritables utilisateurs, à accepter leurs
-            retours, à remettre en question certaines idées et à faire évoluer
-            les outils en fonction des usages observés.
+            Ces projets m'ont aussi appris à travailler avec de véritables
+            utilisateurs, à analyser leurs retours pour en extraire de vraies
+            exigences, à remettre en question certaines idées et à faire évoluer
+            les outils en fonction des usages observés — et à ne pas considérer
+            un outil comme terminé une fois qu'il fonctionne, mais comme quelque
+            chose à surveiller et à faire évoluer dans la durée.
           </p>
           <p>
             Je souhaite aujourd'hui poursuivre cette évolution dans un cadre
@@ -1267,17 +1286,42 @@
             <span class="contact-icon">💻</span>
             <span>Distanciel possible</span>
           </div>
+        </div>
 
-          <div class="contact-item">
-            <span class="contact-icon">🎓</span>
-            <span>My Digital School - Lille</span>
+        <div class="school-blocks">
+          <div class="school-block">
+            <span class="school-name">🎓 My Digital School – Lille</span>
+            <div>🕔 3 jours entreprise / 2 jours école</div>
+            <div>
+              <a
+                href="https://www.mydigitalschool.com/ecole-multimedia-lille"
+                target="_blank"
+                >Site de l'école</a
+              >
+            </div>
+            <div>
+              <a href="../assets/planning-mds.pdf" target="_blank"
+                >Voir le planning d'alternance</a
+              >
+            </div>
           </div>
 
-          <div class="contact-item">
-            <span class="contact-icon">🕔</span>
-            <span>3 jours / 2 jours</span>
+          <div class="school-block">
+            <span class="school-name">🎓 Lycée Gaston Berger – Lille</span>
+            <div>🕔 1 semaine entreprise / 1 semaine école</div>
+            <div>
+              <a href="https://www.gastonberger.fr/" target="_blank"
+                >Site de l'école</a
+              >
+            </div>
+            <div>
+              <a href="../assets/planning-gb.pdf" target="_blank"
+                >Voir le planning d'alternance</a
+              >
+            </div>
           </div>
         </div>
+
         <div class="contact-github">
           Code source de cette page :
           <a
@@ -1287,10 +1331,6 @@
           ><br />
           Consulter mon CV :
           <a href="../assets/cv.pdf" target="_blank"
-            >ouvrir dans le navigateur</a
-          ><br />
-          Voir le planning d'alternance :
-          <a href="../assets/planning-mds.pdf" target="_blank"
             >ouvrir dans le navigateur</a
           >
         </div>
