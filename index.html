@@ -45,15 +45,28 @@
         --hover: #2a1a22;
       }
 
+      html {
+        background: var(--bg);
+      }
+
       body {
         font-family: "Segoe UI", Arial, sans-serif;
-        background:
-          var(--page-overlay),
-          url("../assets/background.webp") center/cover fixed no-repeat,
-          var(--bg);
         color: var(--texte);
         min-height: 100vh;
         padding-bottom: 56px;
+        background: var(--bg);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          var(--page-overlay),
+          url("../assets/background.webp") center/cover no-repeat,
+          var(--bg);
+        pointer-events: none;
       }
 
       /* ── BANDEAU ── */
