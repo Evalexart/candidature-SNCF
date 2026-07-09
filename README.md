@@ -1,19 +1,17 @@
-# 🚆 Page de motivation — SNCF Voyageurs
+# 🚆 Code source de cette page de motivation
 
-Page de candidature pour une alternance BTS SIO SLAM, en ligne sur [evalexa.fr/candidature-SNCF/](https://evalexa.fr/candidature-SNCF/)
+Le trajet s'arrête ici... merci davoir voyagé sur ma page ! Si vous souhaitez voir ce qui se trouve derrière cette page, vous êtes au bon endroit.
 
-> Dépôt publié à titre de vitrine de code. Les assets (image, photo, PDF) ne sont pas inclus : ce n'est pas un projet destiné à être cloné et exécuté.
+Cette page accompagne ma candidature en alternance BTS SIO SLAM au sein de SNCF Voyageurs.
 
-## Stack
+L'animation d'introduction reprend l'idée d'un trajet observé depuis la cabine avant de laisser place au contenu de la candidature.
 
-HTML / CSS / JS vanilla, une seule page, aucune dépendance.
+## À propos de ce dépôt
 
-## Ce que contient la page
+Ce dépôt contient une unique page HTML regroupant la structure, les styles, les scripts JavaScript ainsi que l'animation spécifique à cette candidature.
 
-- Écran d'intro façon fenêtre de train, avec paysage animé en boucle continue (parallaxe, montagnes/collines en `clip-path`, boucle sans saut via copies en miroir)
-- Bascule de thème clair / sombre (variables CSS)
-- En-tête, présentation, accordéons parcours/motivation, carte de contact
+La page est responsive, propose un thème clair/sombre et est hébergée sur mon domaine personnel.
 
-## Assets attendus (non fournis)
+Le CV ainsi que certaines ressources communes (fond, photo, plannings...) ne sont pas inclus dans ce dépôt. Ils sont volontairement mutualisés ou conservés en dehors de celui-ci afin de limiter la diffusion de documents personnels et d'éviter leur duplication entre plusieurs candidatures.
 
-`favicon.png`, `background.webp`, `photo.webp`, `cv.pdf`, `planning-mds.pdf`, `planning-gb.pdf` — référencés dans le code mais à fournir séparément.
+Ce dépôt n'a donc pas vocation à être exécuté de manière autonome.
